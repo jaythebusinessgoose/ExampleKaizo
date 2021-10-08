@@ -1,0 +1,3 @@
+[submodule "LevelSequence"]
+	path = LevelSequence
+	url = https://github.com/jaythebusinessgoose/LevelSequence
