@@ -10,6 +10,7 @@ local level2 = {
     border_type = BORDER_THEME.NEO_BABYLON,
     floor_theme = THEME.ICE_CAVES,
     background_theme = THEME.VOLCANA,
+    music_theme = THEME.DUAT,
     file_name = "level2.lvl",
 }
 
