@@ -1,21 +1,39 @@
 // ------------------------------
-//  ExampleKaizo
+// ExampleKaizo
 // ------------------------------
 
-// ------------------------------
-//  TILE CODES
-// ------------------------------
+\-altar_room_chance                      0
+\-back_room_chance                       0
+\-back_room_hidden_door_cache_chance     0
+\-back_room_hidden_door_chance           0
+\-back_room_interconnection_chance       0
+\-flagged_liquid_rooms                   0
+\-floor_bottom_spread_chance             0
+\-floor_side_spread_chance               0
+\-idol_room_chance                       0
+\-machine_bigroom_chance                 0
+\-machine_rewardroom_chance              0
+\-machine_tallroom_chance                0
+\-machine_wideroom_chance                0
+\-max_liquid_particles                   0
+\-mount_chance                           0
+\-background_chance                      10         // 1/N chance of putting a wall background where it fits (default = 1)
+\-ground_background_chance               10         // 1/N chance of putting a ground background where it fits (default = 1)
+\-size                                   3 1
 
-\?empty						0
-\?floor						1
-\?entrance					E
-\?exit						e
-\?spikes					^
-\?vine						v
-\?growable_vine				V
+\?empty                            0
+\?floor                            1
+\?entrance                         E
+\?exit                             e
+\?spikes                           ^
+\?vine                             v
+\?growable_vine                    V
+\?floor_hard                       X
+
+
 
 ////////////////////////////////////////////////////////////////////////////////
-\.setroom0_0
+\.setroom0_0   // jungle
 ////////////////////////////////////////////////////////////////////////////////
 
 10000000V0
@@ -28,7 +46,7 @@
 1111111111
 
 ////////////////////////////////////////////////////////////////////////////////
-\.setroom0_1
+\.setroom0_1   // jungle
 ////////////////////////////////////////////////////////////////////////////////
 
 000v0000v0
@@ -41,7 +59,7 @@
 1111111111
 
 ////////////////////////////////////////////////////////////////////////////////
-\.setroom0_2
+\.setroom0_2   // jungle
 ////////////////////////////////////////////////////////////////////////////////
 
 0v00V00001

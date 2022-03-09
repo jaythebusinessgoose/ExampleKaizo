@@ -1,22 +1,37 @@
 // ------------------------------
-//  ExampleKaizo
+// ExampleKaizo
 // ------------------------------
 
-\-background_chance 10						// 1/N chance of putting a wall background where it fits (default = 1)
-\-ground_background_chance 10				// 1/N chance of putting a ground background where it fits (default = 1)
+\-altar_room_chance                      0
+\-back_room_chance                       0
+\-back_room_hidden_door_cache_chance     0
+\-back_room_hidden_door_chance           0
+\-back_room_interconnection_chance       0
+\-flagged_liquid_rooms                   0
+\-floor_bottom_spread_chance             0
+\-floor_side_spread_chance               0
+\-idol_room_chance                       0
+\-machine_bigroom_chance                 0
+\-machine_rewardroom_chance              0
+\-machine_tallroom_chance                0
+\-machine_wideroom_chance                0
+\-max_liquid_particles                   0
+\-mount_chance                           0
+\-background_chance                      10         // 1/N chance of putting a wall background where it fits (default = 1)
+\-ground_background_chance               10         // 1/N chance of putting a ground background where it fits (default = 1)
+\-size                                   3 1
 
-// ------------------------------
-//  TILE CODES
-// ------------------------------
+\?empty                            0
+\?floor                            1
+\?entrance                         E
+\?exit                             e
+\?catmummy                         m
+\?floor_hard                       X
 
-\?empty						0
-\?floor						1
-\?entrance					E
-\?exit						e
-\?catmummy                  m
+
 
 ////////////////////////////////////////////////////////////////////////////////
-\.setroom0_0
+\.setroom0_0   // temple
 ////////////////////////////////////////////////////////////////////////////////
 
 1000000000
@@ -29,7 +44,7 @@
 1111111111
 
 ////////////////////////////////////////////////////////////////////////////////
-\.setroom0_1
+\.setroom0_1   // temple
 ////////////////////////////////////////////////////////////////////////////////
 
 0000000000
@@ -42,7 +57,7 @@
 1111111111
 
 ////////////////////////////////////////////////////////////////////////////////
-\.setroom0_2
+\.setroom0_2   // temple
 ////////////////////////////////////////////////////////////////////////////////
 
 0000000001
