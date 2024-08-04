@@ -16,6 +16,11 @@ local level5 = require('level5')
 local level6 = require('level6')
 local level7 = require('level7')
 
+-- Load in one of these levels to test configurations known to crash in CO.
+-- local co_crash1 = require('co_crash1')
+-- local co_crash2 = require('co_crash2')
+-- local co_crash3 = require('co_crash3')
+
 level_sequence.set_levels({level1, level2, level3, level4, level5, level6, level7})
 
 define_tile_code("shortcut")
