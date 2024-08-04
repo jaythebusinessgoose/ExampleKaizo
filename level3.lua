@@ -14,13 +14,6 @@ local level3 = {
     file_name = "level3.lvl",
     width = 4,
     height = 4,
-    post_configure = function(theme, subtheme, theme_properties)
-        theme:pre(THEME_OVERRIDE.SPAWN_EFFECTS, function()
-            for _, exit_door in pairs(state.level_gen.exit_doors) do
-                spawn_entity(ENT_TYPE.MONS_MEGAJELLYFISH, exit_door.x, exit_door.y, LAYER.FRONT, 0, 0)
-            end
-        end)
-    end,
 }
 
 local level_state = {
