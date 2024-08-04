@@ -8,7 +8,7 @@ local level5 = {
     title = "Level 5",
     theme = THEME.JUNGLE,
     border_type = BORDER_THEME.ICE_BABY,
-    floor_theme = THEME.ICE_CAVES,
+    floor_theme = THEME.TIDE_POOL,
     background_theme = THEME.ICE_CAVES,
     file_name = "level5.lvl",
 }
