@@ -1,6 +1,6 @@
 meta = {
     name = 'ExampleKaizo',
-    version = '1.0',
+    version = '2.2',
     description = 'Example usage of LevelSequence',
     author = 'JayTheBusinessGoose',
 }
