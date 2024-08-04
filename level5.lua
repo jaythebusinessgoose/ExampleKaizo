@@ -3,7 +3,7 @@ define_tile_code("catmummy")
 local LevelSequence = require('LevelSequence.level_sequence')
 local BORDER_THEME = LevelSequence.BORDER_THEME
 
-local level2 = {
+local level5 = {
     identifier = "level5",
     title = "Level 5",
     theme = THEME.JUNGLE,
@@ -18,12 +18,12 @@ local level_state = {
     callbacks = {},
 }
 
-level2.load_level = function()
+level5.load_level = function()
     if level_state.loaded then return end
     level_state.loaded = true
 end
 
-level2.unload_level = function()
+level5.unload_level = function()
     if not level_state.loaded then return end
 
     local callbacks_to_clear = level_state.callbacks
@@ -34,4 +34,4 @@ level2.unload_level = function()
     end
 end
 
-return level2
+return level5

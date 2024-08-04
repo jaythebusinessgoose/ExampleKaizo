@@ -3,9 +3,9 @@ define_tile_code("catmummy")
 local LevelSequence = require('LevelSequence.level_sequence')
 local BORDER_THEME = LevelSequence.BORDER_THEME
 
-local level2 = {
+local level6 = {
     identifier = "level6",
-    title = "Level 6",
+    title = "Cosmic Ocean Theme Custom Orb Placements",
     theme = THEME.COSMIC_OCEAN,
     floor_theme = THEME.JUNGLE,
     subtheme = THEME.VOLCANA,
@@ -20,7 +20,7 @@ local level_state = {
     callbacks = {},
 }
 
-level2.load_level = function()
+level6.load_level = function()
     if level_state.loaded then return end
 
     level_state.orbs_to_spawn = {}
@@ -64,7 +64,7 @@ level2.load_level = function()
     level_state.loaded = true
 end
 
-level2.unload_level = function()
+level6.unload_level = function()
     if not level_state.loaded then return end
 
     local callbacks_to_clear = level_state.callbacks
@@ -76,4 +76,4 @@ level2.unload_level = function()
     end
 end
 
-return level2
+return level6

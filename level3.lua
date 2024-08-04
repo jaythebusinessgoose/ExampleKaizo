@@ -3,7 +3,7 @@ define_tile_code("catmummy")
 local LevelSequence = require('LevelSequence.level_sequence')
 local BORDER_THEME = LevelSequence.BORDER_THEME
 
-local level2 = {
+local level3 = {
     identifier = "level3",
     title = "Level 3",
     theme = THEME.VOLCANA,
@@ -14,6 +14,13 @@ local level2 = {
     file_name = "level3.lvl",
     width = 4,
     height = 4,
+    post_configure = function(theme, subtheme, theme_properties)
+        theme:pre(THEME_OVERRIDE.SPAWN_EFFECTS, function()
+            for _, exit_door in pairs(state.level_gen.exit_doors) do
+                spawn_entity(ENT_TYPE.MONS_MEGAJELLYFISH, exit_door.x, exit_door.y, LAYER.FRONT, 0, 0)
+            end
+        end)
+    end,
 }
 
 local level_state = {
@@ -21,12 +28,12 @@ local level_state = {
     callbacks = {},
 }
 
-level2.load_level = function()
+level3.load_level = function()
     if level_state.loaded then return end
     level_state.loaded = true
 end
 
-level2.unload_level = function()
+level3.unload_level = function()
     if not level_state.loaded then return end
 
     local callbacks_to_clear = level_state.callbacks
@@ -37,4 +44,4 @@ level2.unload_level = function()
     end
 end
 
-return level2
+return level3
