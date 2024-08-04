@@ -7,6 +7,7 @@ local level_state = {
     loaded = false,
     spawning_jellyfish = false,
     orbs_to_spawn = {},
+    jellyfish = {},
     callbacks = {},
 }
 
@@ -25,7 +26,9 @@ local level7 = {
         theme:pre(THEME_OVERRIDE.SPAWN_EFFECTS, function()
             for _, exit_door in pairs(state.level_gen.exit_doors) do
                 level_state.spawning_jellyfish = true
-                spawn_entity(ENT_TYPE.MONS_MEGAJELLYFISH, exit_door.x, exit_door.y, LAYER.FRONT, 0, 0)
+                local jelly_uid = spawn_entity(ENT_TYPE.MONS_MEGAJELLYFISH, exit_door.x, exit_door.y, LAYER.FRONT, 0, 0)
+                get_entity(jelly_uid).orb_uid = jelly_uid
+                level_state.jellyfish[#level_state.jellyfish+1] = jelly_uid
                 level_state.spawning_jellyfish = false
             end
         end)
@@ -36,6 +39,7 @@ level7.load_level = function()
     if level_state.loaded then return end
 
     level_state.orbs_to_spawn = {}
+    level_state.jellyfish = {}
 
     -- Handle the spawning of natural orbs to move them to the configured positions.
     level_state.callbacks[#level_state.callbacks+1] = set_post_entity_spawn(function(orb, spawn_flags)
@@ -53,8 +57,25 @@ level7.load_level = function()
                 -- When there are fewer orb tilecodes than spawned orbs, kill the orb instead.
                 orb.flags = set_flag(orb.flags, ENT_FLAG.DEAD)
                 orb:destroy()
+                return
             end
         end
+
+        orb:set_post_destroy(function()
+            local orb_uids = get_entities_by_type(ENT_TYPE.ITEM_FLOATING_ORB)
+            local live_orbs = false
+            for _, orb_uid in pairs(orb_uids) do
+                if not test_flag(get_entity(orb_uid).flags, ENT_FLAG.DEAD) then
+                    live_orbs = true
+                    break
+                end
+            end
+            if not live_orbs then
+                for _, jellyfish in pairs(level_state.jellyfish) do
+                    get_entity(jellyfish).move_state = 6
+                end
+            end
+        end)
     end, SPAWN_TYPE.ANY, MASK.ITEM, ENT_TYPE.ITEM_FLOATING_ORB)
 
     level_state.callbacks[#level_state.callbacks+1] = set_callback(function()
@@ -82,6 +103,7 @@ level7.unload_level = function()
 
     local callbacks_to_clear = level_state.callbacks
     level_state.orbs_to_spawn = {}
+    level_state.jellyfish = {}
     level_state.loaded = false
     level_state.callbacks = {}
     for _, callback in pairs(callbacks_to_clear) do
