@@ -14,12 +14,13 @@ local level3 = require('level3')
 local level4 = require('level4')
 local level5 = require('level5')
 local level6 = require('level6')
+local level7 = require('level7')
 
-level_sequence.set_levels({level1, level2, level3, level4, level5, level6})
+level_sequence.set_levels({level1, level2, level3, level4, level5, level6, level7})
 
 define_tile_code("shortcut")
 set_pre_tile_code_callback(function(x, y, layer)
-    level_sequence.spawn_shortcut(x, y, layer, level3, SIGN_TYPE.RIGHT)
+    level_sequence.spawn_shortcut(x, y, layer, level7, SIGN_TYPE.RIGHT)
     return true
 end, "shortcut")
 
