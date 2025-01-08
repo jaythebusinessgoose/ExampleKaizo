@@ -28,26 +28,40 @@ local function find_level_with_id(level_id)
     return nil
 end
 
-define_tile_code("shortcut")
-set_pre_tile_code_callback(function(x, y, layer)
-    local shortcut_level = find_level_with_id("level7")
-    level_sequence.spawn_shortcut(x, y, layer, shortcut_level, SIGN_TYPE.RIGHT)
-    return true
-end, "shortcut")
-
 level_sequence.set_on_win(function(attempts, total_time)
     print("You won!")
 	warp(1, 1, THEME.BASE_CAMP)
 end)
 
-set_callback(function()
-    level_sequence.activate()
-end, ON.LOAD)
+local active = false
+local internal_callbacks = {}
+local function add_callback(callback)
+    internal_callbacks[#internal_callbacks+1] = callback
+end
+local function activate()
+    if active then return end
+    active = true
 
-set_callback(function()
     level_sequence.activate()
-end, ON.SCRIPT_ENABLE)
 
-set_callback(function()
+    define_tile_code("shortcut")
+    add_callback(set_pre_tile_code_callback(function(x, y, layer)
+        local shortcut_level = find_level_with_id("level6")
+        level_sequence.spawn_shortcut(x, y, layer, shortcut_level, SIGN_TYPE.RIGHT)
+        return true
+    end, "shortcut"))
+end
+local function deactivate()
+    if not active then return end
+    active = false
     level_sequence.deactivate()
-end, ON.SCRIPT_DISABLE)
+    for _, callback in pairs(internal_callbacks) do
+        clear_callback(callback)
+    end
+end
+
+set_callback(activate, ON.LOAD)
+
+set_callback(activate, ON.SCRIPT_ENABLE)
+
+set_callback(deactivate, ON.SCRIPT_DISABLE)
