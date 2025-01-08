@@ -8,6 +8,9 @@ meta = {
 local level_sequence = require("LevelSequence/level_sequence")
 local SIGN_TYPE = level_sequence.SIGN_TYPE
 
+define_tile_code("catmummy")
+define_tile_code("shortcut")
+
 level_sequence.load_levels()
 
 -- Load in one of these levels to test configurations known to crash in CO.
@@ -28,6 +31,16 @@ local function find_level_with_id(level_id)
     return nil
 end
 
+local level2 = find_level_with_id("level2")
+if level2 then
+    function level2.on_load_level()
+        level2.attach_callback(set_pre_tile_code_callback(function(x, y, layer)
+            spawn_entity(ENT_TYPE.MONS_CATMUMMY, x, y, layer, 0, 0)
+            return true
+        end, "catmummy"))
+    end
+end
+
 level_sequence.set_on_win(function(attempts, total_time)
     print("You won!")
 	warp(1, 1, THEME.BASE_CAMP)
@@ -44,7 +57,6 @@ local function activate()
 
     level_sequence.activate()
 
-    define_tile_code("shortcut")
     add_callback(set_pre_tile_code_callback(function(x, y, layer)
         local shortcut_level = find_level_with_id("level6")
         level_sequence.spawn_shortcut(x, y, layer, shortcut_level, SIGN_TYPE.RIGHT)
