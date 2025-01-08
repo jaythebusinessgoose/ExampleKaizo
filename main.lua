@@ -12,6 +12,7 @@ define_tile_code("catmummy")
 define_tile_code("shortcut")
 
 level_sequence.load_levels()
+level_sequence.set_show_toast(true)
 
 -- Load in one of these levels to test configurations known to crash in CO.
 -- local co_crash1 = require('co_crash1')
