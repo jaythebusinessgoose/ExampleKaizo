@@ -1,0 +1,170 @@
+{
+  "sequence":[
+    {
+      "identifier":"level1",
+      "name":"Level 1",
+      "file_name":"level1.lvl",
+      "theme":2,
+      "width":3,
+      "height":1
+    },
+    {
+      "identifier":"level2",
+      "name":"Level 2",
+      "file_name":"level2.lvl",
+      "theme":6,
+      "width":3,
+      "height":1,
+      "border_theme":1,
+      "border_entity_theme":8,
+      "floor_theme":7,
+      "background_theme":3,
+      "music_theme":12
+    },
+    {
+      "identifier":"level3",
+      "name":"Level 3",
+      "file_name":"level3.lvl",
+      "theme":3,
+      "width":4,
+      "height":4,
+      "border_theme":10,
+      "loop":true,
+      "border_entity_theme":1,
+      "background_theme":7,
+      "music_theme":12
+    },
+    {
+      "identifier":"level4",
+      "name":"Level 4",
+      "file_name":"level4.lvl",
+      "theme":5,
+      "width":3,
+      "height":1,
+      "border_theme":12,
+      "border_entity_theme":12,
+      "floor_theme":3
+    },
+    {
+      "identifier":"level5",
+      "name":"Level 5",
+      "file_name":"level5.lvl",
+      "theme":2,
+      "width":3,
+      "height":2,
+      "border_theme":7,
+      "border_entity_theme":8,
+      "floor_theme":5,
+      "background_theme":7
+    },
+    {
+      "identifier":"level6",
+      "name":"Cosmic Ocean Theme Custom Orb Placements",
+      "file_name":"level6.lvl",
+      "theme":10,
+      "subtheme":3,
+      "width":3,
+      "height":3,
+      "floor_theme":2,
+      "spawn_door_jellyfish":1
+    },
+    {
+      "identifier":"level7",
+      "name":"Cosmic Ocean Elements Non-CO Theme",
+      "file_name":"level7.lvl",
+      "theme":7,
+      "width":3,
+      "height":3,
+      "border_theme":10,
+      "loop":true,
+      "border_entity_theme":1,
+      "background_theme":10,
+      "background_texture_theme":3,
+      "spawn_door_jellyfish":1
+    }
+  ],
+  "all_configurations":{
+    "level1.lvl":{
+      "identifier":"level1",
+      "name":"Level 1",
+      "file_name":"level1.lvl",
+      "theme":2,
+      "width":3,
+      "height":1
+    },
+    "level2.lvl":{
+      "identifier":"level2",
+      "name":"Level 2",
+      "file_name":"level2.lvl",
+      "theme":6,
+      "width":3,
+      "height":1,
+      "border_theme":1,
+      "border_entity_theme":8,
+      "floor_theme":7,
+      "background_theme":3,
+      "music_theme":12
+    },
+    "level3.lvl":{
+      "identifier":"level3",
+      "name":"Level 3",
+      "file_name":"level3.lvl",
+      "theme":3,
+      "width":4,
+      "height":4,
+      "border_theme":10,
+      "loop":true,
+      "border_entity_theme":1,
+      "background_theme":7,
+      "music_theme":12
+    },
+    "level4.lvl":{
+      "identifier":"level4",
+      "name":"Level 4",
+      "file_name":"level4.lvl",
+      "theme":5,
+      "width":3,
+      "height":1,
+      "border_theme":12,
+      "border_entity_theme":12,
+      "floor_theme":3
+    },
+    "level5.lvl":{
+      "identifier":"level5",
+      "name":"Level 5",
+      "file_name":"level5.lvl",
+      "theme":2,
+      "width":3,
+      "height":2,
+      "border_theme":7,
+      "border_entity_theme":8,
+      "floor_theme":5,
+      "background_theme":7
+    },
+    "level6.lvl":{
+      "identifier":"level6",
+      "name":"Cosmic Ocean Theme Custom Orb Placements",
+      "file_name":"level6.lvl",
+      "theme":10,
+      "subtheme":3,
+      "width":3,
+      "height":3,
+      "floor_theme":2,
+      "spawn_door_jellyfish":1
+    },
+    "level7.lvl":{
+      "identifier":"level7",
+      "name":"Cosmic Ocean Elements Non-CO Theme",
+      "file_name":"level7.lvl",
+      "theme":7,
+      "width":3,
+      "height":3,
+      "border_theme":10,
+      "loop":true,
+      "border_entity_theme":1,
+      "background_theme":10,
+      "background_texture_theme":3,
+      "spawn_door_jellyfish":1
+    }
+  }
+}
